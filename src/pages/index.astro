@@ -1,3 +1,4 @@
 ---
-return Astro.redirect(import.meta.env.BASE_URL + 'template-1');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+return Astro.redirect(base + '/template-1');
 ---
