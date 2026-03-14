@@ -1,0 +1,1070 @@
+---
+import TemplateNav from '../components/TemplateNav.tsx';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notaría de San Ramón – Lic. Marcela Medina Ricci</title>
+  <meta name="description" content="Notaría de San Ramón. Fe pública al servicio de su patrimonio. Escrituras, testamentos, poderes y certificaciones con rigor y distinción." />
+  <meta name="keywords" content="notaría, notario corporativo, escrituras, testamentos, poderes, alta asesoría notarial" />
+  <meta property="og:title" content="Notaría de San Ramón – Lic. Marcela Medina Ricci" />
+  <meta property="og:description" content="Discreción, rigor y excelencia. Notaría de alto nivel para quienes exigen lo mejor." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://notariasanramon.cl" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Notaría de San Ramón",
+    "description": "Alta asesoría notarial para personas, familias y corporaciones",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Sta. Rosa Nº 7955",
+      "addressLocality": "San Ramón",
+      
+      
+      "addressCountry": "CL"
+    },
+    "telephone": ["2-2511 4689","2-2615 0414"],"email":"notariasanramon@gmail.com","openingHours":"Mo-Fr 09:00-17:30"
+  }
+
+    // Hamburger menu
+    const menuBtn = document.getElementById('menu-btn');
+    const siteNav = document.getElementById('site-nav');
+    menuBtn?.addEventListener('click', () => {
+      const open = menuBtn.classList.toggle('open');
+      if (siteNav) siteNav.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --obsidian: #0C0C0E;
+      --obsidian-mid: #141417;
+      --obsidian-light: #1C1C21;
+      --bronze: #B87333;
+      --bronze-light: #D4935A;
+      --bronze-pale: #E8C49A;
+      --cream: #EAE0CE;
+      --cream-dim: #C4B89A;
+      --white: #F8F4EE;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--obsidian);
+      color: var(--cream);
+      font-family: 'Raleway', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    /* Subtle grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      padding: 0;
+      transition: background 0.4s;
+    }
+    header.scrolled {
+      background: rgba(12,12,14,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(184,115,51,0.15);
+    }
+    .header-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.8rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .logo-name {
+      font-family: 'Cormorant', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 0.15em;
+      line-height: 1;
+    }
+    .logo-name strong {
+      font-weight: 600;
+      color: var(--bronze-light);
+    }
+    .logo-tag {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(184,115,51,0.55);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    nav a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(234,224,206,0.55);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--bronze-pale); }
+    .nav-divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(184,115,51,0.25);
+    }
+    .nav-contact {
+      color: var(--bronze) !important;
+      border-bottom: 1px solid rgba(184,115,51,0.3);
+      padding-bottom: 1px;
+    }
+    .nav-contact:hover { color: var(--bronze-light) !important; border-bottom-color: var(--bronze-light); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(184,115,51,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(28,28,33,0.8) 0%, transparent 70%),
+        linear-gradient(160deg, var(--obsidian) 0%, #0F0F12 100%);
+    }
+    .hero-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .hero-lines::before,
+    .hero-lines::after {
+      content: '';
+      position: absolute;
+    }
+    .hero-lines::before {
+      top: 15%;
+      right: 8%;
+      width: 1px;
+      height: 70vh;
+      background: linear-gradient(180deg, transparent, rgba(184,115,51,0.2) 30%, rgba(184,115,51,0.2) 70%, transparent);
+    }
+    .hero-lines::after {
+      top: 15%;
+      right: 12%;
+      width: 1px;
+      height: 70vh;
+      background: linear-gradient(180deg, transparent, rgba(184,115,51,0.06) 30%, rgba(184,115,51,0.06) 70%, transparent);
+    }
+    .hero-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 8rem 3rem 4rem;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-content {}
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--bronze);
+    }
+    .eyebrow-text {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--bronze);
+    }
+    h1 {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(3.5rem, 5.5vw, 6rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.0;
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+    h1 em {
+      color: var(--bronze-light);
+      font-style: italic;
+      font-weight: 300;
+    }
+    .hero-sub {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(234,224,206,0.5);
+      line-height: 2;
+      max-width: 420px;
+      margin-bottom: 3rem;
+      letter-spacing: 0.04em;
+    }
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .btn-bronze {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      background: transparent;
+      border: 1px solid var(--bronze);
+      color: var(--bronze-pale);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-bronze::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--bronze);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+      z-index: -1;
+    }
+    .btn-bronze:hover { color: var(--obsidian); }
+    .btn-bronze:hover::before { transform: scaleX(1); }
+    .btn-link {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(234,224,206,0.4);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(234,224,206,0.15);
+      padding-bottom: 2px;
+      transition: all 0.25s;
+    }
+    .btn-link:hover { color: rgba(234,224,206,0.75); border-bottom-color: rgba(234,224,206,0.4); }
+
+    .hero-visual {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .hero-card {
+      width: 340px;
+      padding: 2.5rem;
+      background: rgba(20,20,23,0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(184,115,51,0.15);
+      position: relative;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 2rem;
+      right: 2rem;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+    }
+    .card-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+    .card-stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(184,115,51,0.08);
+    }
+    .card-stat-row:first-of-type { padding-top: 0; }
+    .card-stat-row:last-of-type { border-bottom: none; padding-bottom: 0; }
+    .card-stat-num {
+      font-family: 'Cormorant', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--bronze-light);
+      line-height: 1;
+    }
+    .card-stat-desc {
+      text-align: right;
+    }
+    .card-stat-desc p:first-child {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--cream-dim);
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+    }
+    .card-stat-desc p:last-child {
+      font-size: 0.6rem;
+      color: rgba(234,224,206,0.35);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── MARQUEE BAND ── */
+    .marquee-band {
+      border-top: 1px solid rgba(184,115,51,0.12);
+      border-bottom: 1px solid rgba(184,115,51,0.12);
+      padding: 1.2rem 0;
+      overflow: hidden;
+      background: var(--obsidian-mid);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 4rem;
+      width: max-content;
+      animation: marquee 25s linear infinite;
+    }
+    .marquee-item {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(184,115,51,0.45);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+    .marquee-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(184,115,51,0.3); }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 9rem 0;
+      background: var(--obsidian);
+    }
+    .section-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 5rem;
+      align-items: end;
+    }
+    .section-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-label::before { content: ''; width: 24px; height: 1px; background: var(--bronze); }
+    .section-title {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+    }
+    .section-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(234,224,206,0.4);
+      line-height: 2;
+      letter-spacing: 0.03em;
+      align-self: end;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(184,115,51,0.08);
+    }
+    .service-card {
+      background: var(--obsidian);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .service-card:hover { background: var(--obsidian-light); }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,115,51,0.3), transparent);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-num {
+      font-family: 'Cormorant', serif;
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--bronze);
+      opacity: 0.5;
+      margin-bottom: 2rem;
+    }
+    .service-name {
+      font-family: 'Cormorant', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+    .service-desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(234,224,206,0.4);
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+    }
+    .service-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      opacity: 0;
+      transition: opacity 0.3s;
+      text-decoration: none;
+    }
+    .service-card:hover .service-more { opacity: 0.7; }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 9rem 0;
+      background: var(--obsidian-mid);
+      position: relative;
+      overflow: hidden;
+    }
+    .about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse 60% 80% at 85% 50%, rgba(184,115,51,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .about-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: center;
+    }
+    .about-content {}
+    .about-text {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(234,224,206,0.5);
+      line-height: 2.1;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .about-highlight {
+      font-family: 'Cormorant', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-dim);
+      line-height: 1.5;
+      margin: 2.5rem 0;
+      padding-left: 1.5rem;
+      border-left: 1px solid var(--bronze);
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-box {
+      padding: 3rem;
+      background: var(--obsidian-light);
+      border: 1px solid rgba(184,115,51,0.1);
+      position: relative;
+    }
+    .about-box::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 3rem;
+      right: 3rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--bronze) 30%, var(--bronze) 70%, transparent);
+      opacity: 0.4;
+    }
+    .about-box-title {
+      font-family: 'Cormorant', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+    .about-box-title span { color: var(--bronze-light); font-style: italic; }
+    .credential-list { list-style: none; }
+    .credential-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(184,115,51,0.06);
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(234,224,206,0.55);
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+    .credential-list li:last-child { border-bottom: none; }
+    .credential-list li::before {
+      content: '—';
+      color: var(--bronze);
+      opacity: 0.5;
+      flex-shrink: 0;
+      font-family: 'Cormorant', serif;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 9rem 0;
+      background: var(--obsidian);
+    }
+    .contact-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+    }
+    .contact-content {}
+    .contact-detail {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .contact-detail-item {}
+    .cd-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
+    }
+    .cd-value {
+      font-family: 'Cormorant', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(234,224,206,0.65);
+      line-height: 1.6;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .field { display: flex; flex-direction: column; gap: 0.5rem; }
+    .field label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      opacity: 0.55;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      background: var(--obsidian-light);
+      border: none;
+      border-bottom: 1px solid rgba(184,115,51,0.15);
+      color: var(--cream-dim);
+      padding: 0.85rem 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.3s;
+      letter-spacing: 0.05em;
+      background: transparent;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus { border-bottom-color: rgba(184,115,51,0.5); }
+    .field textarea { resize: none; min-height: 80px; }
+    .field select option { background: var(--obsidian-light); }
+    .field input::placeholder,
+    .field textarea::placeholder { color: rgba(234,224,206,0.2); font-size: 0.8rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--obsidian-mid);
+      border-top: 1px solid rgba(184,115,51,0.1);
+      padding: 3rem 0;
+    }
+    .footer-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(234,224,206,0.4);
+      letter-spacing: 0.1em;
+    }
+    .footer-logo strong { color: rgba(184,115,51,0.5); font-weight: 400; }
+    .footer-legal {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: rgba(234,224,206,0.18);
+      text-align: center;
+    }
+    .footer-links { display: flex; gap: 2.5rem; }
+    .footer-links a {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(234,224,206,0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(234,224,206,0.55); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-content > * {
+      animation: reveal 1s ease forwards;
+      opacity: 0;
+    }
+    .hero-content > *:nth-child(1) { animation-delay: 0.2s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.4s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.65s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.85s; }
+    .hero-card {
+      animation: reveal 1.2s ease 0.5s forwards;
+      opacity: 0;
+    }
+
+    /* ── HAMBURGER ── */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 301;
+    }
+    .menu-btn span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: currentColor;
+      transition: all 0.25s;
+    }
+    .menu-btn.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+    .menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+    @media (max-width: 768px) {
+      .menu-btn { display: flex; color: var(--cream); }
+      .header-inner { padding: 1.2rem 1.5rem; }
+      #site-nav {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(12,12,14,0.97); backdrop-filter: blur(24px);
+        flex-direction: column; align-items: center; justify-content: center;
+        gap: 2.5rem; display: none; z-index: 250;
+      }
+      #site-nav.open { display: flex; }
+      #site-nav a { font-size: 1rem; letter-spacing: 0.25em; color: var(--cream) !important; }
+      .nav-divider { display: none; }
+      .hero-inner { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 2.5rem; }
+      h1 { font-size: clamp(2.6rem, 11vw, 4rem); }
+      .hero-sub { max-width: 100%; }
+      .hero-visual { justify-content: center; }
+      .hero-card { width: 100%; max-width: 380px; }
+      .hero-lines::before, .hero-lines::after { display: none; }
+      .services { padding: 4rem 0; }
+      .section-inner { padding: 0 1.5rem; }
+      .section-header { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 2rem 1.5rem; }
+      .about { padding: 4rem 0; }
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 0 1.5rem; }
+      .about-box { padding: 1.8rem; }
+      .about-highlight { font-size: 1.2rem; }
+      .contact { padding: 4rem 0; }
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 0 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; padding: 2rem 1.5rem; gap: 1rem; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-name">Notaría <strong>de San Ramón</strong></div>
+        <div class="logo-tag">Lic. Marcela Medina Ricci · Notaria Pública</div>
+      </div>
+      
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav id="site-nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">La Notaria</a>
+        <div class="nav-divider"></div>
+        <a href="#contacto" class="nav-contact">Solicitar Hora</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-gradient"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">Notaría de San Ramón · Fe Pública</span>
+        </div>
+        <h1>
+          Cada acto<br/>jurídico,<br/><em>perfectamente</em><br/>resguardado.
+        </h1>
+        <p class="hero-sub">
+          Asesoría notarial de alto nivel para personas, familias y corporaciones
+          que demandan rigor, discreción y resultados.
+        </p>
+        <div class="hero-cta-row">
+          <a href="#contacto" class="btn-bronze">Solicitar Hora</a>
+          <a href="#servicios" class="btn-link">Ver servicios</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="card-label">Trayectoria · Notaría de San Ramón</div>
+          <div class="card-stat-row">
+            <div class="card-stat-num">31+</div>
+            <div class="card-stat-desc">
+              <p>Años de ejercicio</p>
+              <p>1994 – 2025</p>
+            </div>
+          </div>
+          <div class="card-stat-row">
+            <div class="card-stat-num">52K</div>
+            <div class="card-stat-desc">
+              <p>Instrumentos protocolo</p>
+              <p>Actos notariales</p>
+            </div>
+          </div>
+          <div class="card-stat-row">
+            <div class="card-stat-num">100%</div>
+            <div class="card-stat-desc">
+              <p>Validez jurídica</p>
+              <p>Garantía notarial</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-band">
+    <div class="marquee-track">
+      <div class="marquee-item">
+        Escrituras Públicas <span class="marquee-dot"></span>
+        Testamentos <span class="marquee-dot"></span>
+        Poderes Notariales <span class="marquee-dot"></span>
+        Actas Notariales <span class="marquee-dot"></span>
+        Certificaciones <span class="marquee-dot"></span>
+        Sucesiones <span class="marquee-dot"></span>
+        Constitución de Sociedades <span class="marquee-dot"></span>
+        Fe Pública <span class="marquee-dot"></span>
+        Escrituras Públicas <span class="marquee-dot"></span>
+        Testamentos <span class="marquee-dot"></span>
+        Poderes Notariales <span class="marquee-dot"></span>
+        Actas Notariales <span class="marquee-dot"></span>
+        Certificaciones <span class="marquee-dot"></span>
+        Sucesiones <span class="marquee-dot"></span>
+        Constitución de Sociedades <span class="marquee-dot"></span>
+        Fe Pública <span class="marquee-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="servicios">
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <p class="section-label">Servicios Notariales</p>
+          <h2 class="section-title">Precisión en<br/>cada instrumento.</h2>
+        </div>
+        <p class="section-desc">
+          Nuestro equipo de especialistas garantiza que cada acto notarial cumpla
+          con los más exigentes estándares jurídicos, fiscales y registrales.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <div class="service-name">Escrituras Públicas</div>
+          <p class="service-desc">Compraventa de inmuebles, constitución societaria, contratos, hipotecas y todo acto que requiera fe pública.</p>
+          <a href="#contacto" class="service-more">Consultar →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <div class="service-name">Testamentos</div>
+          <p class="service-desc">Redacción y otorgamiento de testamento público abierto con plena validez. Planificación patrimonial integral.</p>
+          <a href="#contacto" class="service-more">Consultar →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <div class="service-name">Poderes Notariales</div>
+          <p class="service-desc">Poderes generales y especiales para actos de dominio, administración y representación ante cualquier autoridad.</p>
+          <a href="#contacto" class="service-more">Consultar →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <div class="service-name">Actas Notariales</div>
+          <p class="service-desc">Actas de notoriedad, hechos, asambleas, sorteos, entrega-recepción e inventarios con plena validez legal.</p>
+          <a href="#contacto" class="service-more">Consultar →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <div class="service-name">Sucesiones</div>
+          <p class="service-desc">Juicios sucesorios intestamentarios y testamentarios. Adjudicación y regularización patrimonial eficiente.</p>
+          <a href="#contacto" class="service-more">Consultar →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">06</div>
+          <div class="service-name">Asesoría Corporativa</div>
+          <p class="service-desc">Constitución, modificación y disolución de sociedades. Asambleas, fusiones, escisiones y reestructuras corporativas.</p>
+          <a href="#contacto" class="service-more">Consultar →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="nosotros">
+    <div class="about-inner">
+      <div class="about-content">
+        <p class="section-label">El Titular</p>
+        <h2 class="section-title" style="font-family: 'Cormorant', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--white); line-height: 1.15; margin-bottom: 2rem;">Lic. Marcela<br/>Medina Ricci</h2>
+        <p class="about-text">
+          Doctor en Derecho por la Universidad Iberoamericana. Especialista en derecho
+          notarial, registral y corporativo. Titular de la Notaría desde 1994, con una
+          trayectoria construida sobre la confianza y el rigor académico y profesional.
+        </p>
+        <div class="about-highlight">
+          "Mi compromiso no termina con la firma del instrumento. La certeza jurídica
+          que otorga esta notaría dura tanto como el propio acto."
+        </div>
+        <p class="about-text">
+          Consultor de instituciones financieras de primer nivel y de grupos empresariales
+          nacionales e internacionales. Catedrático de Derecho Notarial en la Universidad
+          Iberoamericana por más de 20 años.
+        </p>
+      </div>
+      <div class="about-visual">
+        <div class="about-box">
+          <div class="about-box-title">Formación y<br/><span>credenciales</span></div>
+          <ul class="credential-list">
+            <li>Licenciada en Derecho con mención en Derecho Notarial</li>
+            <li>Especialista en derecho inmobiliario y sucesorio</li>
+            <li>Miembro activa · Asociación de Notarios de Chile</li>
+            <li>Más de 20 años de ejercicio notarial en San Ramón</li>
+            <li>Atención personalizada y directa en cada trámite</li>
+            <li>Certeza jurídica en cada instrumento notarial</li>
+            <li>Confidencialidad y seriedad profesional garantizadas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contacto">
+    <div class="contact-inner">
+      <div class="contact-content">
+        <p class="section-label">Contacto</p>
+        <h2 class="section-title" style="font-family: 'Cormorant', serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 0;">Estamos aquí<br/>para orientarle.</h2>
+        <div class="contact-detail">
+          <div class="contact-detail-item">
+            <div class="cd-label">Dirección</div>
+            <div class="cd-value">Av. Sta. Rosa Nº 7955<br/>San Ramón, Santiago</div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-label">Teléfono</div>
+            <div class="cd-value">2-2511 4689 / 2-2615 0414</div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-label">Correo</div>
+            <div class="cd-value">contacto@notariasanramon.cl</div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-label">Horario</div>
+            <div class="cd-value">Lunes a Viernes · 09:00 – 17:30</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form">
+        <div class="form-row">
+          <div class="field">
+            <label>Nombre</label>
+            <input type="text" placeholder="Su nombre completo" />
+          </div>
+          <div class="field">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="55 0000-0000" />
+          </div>
+        </div>
+        <div class="field">
+          <label>Correo Electrónico</label>
+          <input type="email" placeholder="correo@empresa.com" />
+        </div>
+        <div class="field">
+          <label>Servicio</label>
+          <select>
+            <option value="">Seleccionar servicio</option>
+            <option>Escritura Pública</option>
+            <option>Testamento</option>
+            <option>Poder Notarial</option>
+            <option>Acta Notarial</option>
+            <option>Sucesión</option>
+            <option>Asesoría Corporativa</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Mensaje</label>
+          <textarea placeholder="Describa brevemente su asunto..."></textarea>
+        </div>
+        <button type="submit" class="btn-bronze" style="border: none; cursor: pointer; padding: 1rem; text-align: center; width: 100%;">
+          Enviar Consulta
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Notaría <strong>de San Ramón</strong></div>
+      <div class="footer-legal">© 2025 · Lic. Marcela Medina Ricci · Notaría de San Ramón · Todos los derechos reservados</div>
+      <div class="footer-links">
+        <a href="#">Aviso de Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <TemplateNav client:load />
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) header?.classList.add('scrolled');
+      else header?.classList.remove('scrolled');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1044 @@
+---
+import TemplateNav from '../components/TemplateNav.tsx';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notaría de San Ramón – Lic. Marcela Medina Ricci | Fe Pública y Certeza Jurídica</title>
+  <meta name="description" content="Notaría de San Ramón a cargo de la Lic. Marcela Medina Ricci. Escrituras, testamentos, poderes y certificaciones con rigor y distinción. Av. Sta. Rosa Nº 7955, San Ramón." />
+  <meta name="keywords" content="notaría, San Ramón, Marcela Medina Ricci, escrituras públicas, testamentos, poderes notariales, certificaciones, fe pública" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Notaría de San Ramón – Lic. Marcela Medina Ricci" />
+  <meta property="og:description" content="Fe pública con distinción en San Ramón. Lic. Marcela Medina Ricci, Notaria Pública." />
+  <meta property="og:url" content="https://www.notariasanramon.cl/" />
+  <link rel="canonical" href="https://www.notariasanramon.cl/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Notaría de San Ramón",
+    "description": "Notaría pública a cargo de la Lic. Marcela Medina Ricci",
+    "url": "https://www.notariasanramon.cl",
+    "telephone": ["2-2511 4689","2-2615 0414"],
+    "email": "notariasanramon@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Sta. Rosa Nº 7955",
+      "addressLocality": "San Ramón",
+      "addressCountry": "CL"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "17:30"
+    },
+    "employee": {
+      "@type": "Person",
+      "name": "Lic. Marcela Medina Ricci",
+      "jobTitle": "Notaria Pública"
+    }
+  }</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:       #1A0E1C;
+      --void-mid:   #221428;
+      --void-light: #2E1A38;
+      --rose:       #C4728A;
+      --rose-light: #D9A0B2;
+      --rose-pale:  #F0D8E2;
+      --pearl:      #F5EEF2;
+      --pearl-dim:  #D4C4CC;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--void);
+      color: var(--pearl);
+      font-family: 'Raleway', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9998;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── MINIMAL TOP HEADER ── */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      transition: background 0.4s, border-color 0.4s;
+    }
+    .site-header.scrolled {
+      background: rgba(26,14,28,0.96);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(196,114,138,0.1);
+    }
+    .header-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(245,238,242,0.6);
+      letter-spacing: 0.1em;
+    }
+    .header-logo em { color: var(--rose); font-style: italic; }
+    .header-nav { display: flex; align-items: center; gap: 2.8rem; }
+    .header-nav a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(245,238,242,0.4);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .header-nav a:hover { color: var(--rose-light); }
+    .header-nav .cta {
+      color: var(--rose) !important;
+      border: 1px solid rgba(196,114,138,0.35);
+      padding: 0.45rem 1.2rem;
+      transition: background 0.25s, color 0.25s !important;
+    }
+    .header-nav .cta:hover {
+      background: var(--rose);
+      color: var(--void) !important;
+    }
+
+    /* ── HERO: 3-COLUMN CENTERED MEDALLION ── */
+    /* Layout: [flank-left 210px] [center 1fr] [flank-right 210px]
+       Nothing like T1 (text-left/card-right) or T2 (spine+main+stats col) or T3 (centered doc) */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 210px 1fr 210px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(196,114,138,0.07) 0%, transparent 65%),
+        linear-gradient(160deg, var(--void) 0%, #160C1A 100%);
+      pointer-events: none;
+    }
+
+    /* flanks — narrow columns with vertical contact info */
+    .hero-flank {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 7rem 1.8rem 3rem;
+    }
+    .hero-flank--left { border-right: 1px solid rgba(196,114,138,0.1); }
+    .hero-flank--right { border-left: 1px solid rgba(196,114,138,0.1); }
+    .flank-item {}
+    .flank-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(196,114,138,0.5);
+      margin-bottom: 0.4rem;
+    }
+    .flank-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(245,238,242,0.45);
+      line-height: 1.5;
+    }
+    .flank-value a { color: inherit; text-decoration: none; }
+
+    /* center — medallion composition */
+    .hero-center {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 3rem 4rem;
+      text-align: center;
+      gap: 0;
+    }
+    .hero-pre {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(196,114,138,0.55);
+      margin-bottom: 2rem;
+      animation: fadeDown 0.8s ease 0.1s both;
+    }
+    .hero-medallion {
+      width: clamp(180px, 22vw, 260px);
+      height: clamp(180px, 22vw, 260px);
+      margin-bottom: 2.5rem;
+      animation: medalReveal 1.4s ease 0.3s both;
+      opacity: 0;
+    }
+    @keyframes medalReveal {
+      from { opacity: 0; transform: scale(0.85) rotate(-8deg); }
+      to   { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 300;
+      color: var(--pearl);
+      line-height: 1.1;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.6rem;
+      animation: fadeUp 1s ease 0.7s both;
+      opacity: 0;
+    }
+    .hero-title em { color: var(--rose-light); font-style: italic; }
+    .hero-notary {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(196,114,138,0.6);
+      margin-bottom: 2.5rem;
+      animation: fadeUp 1s ease 0.85s both;
+      opacity: 0;
+    }
+    .hero-cta {
+      display: inline-block;
+      padding: 0.9rem 3rem;
+      border: 1px solid var(--rose);
+      color: var(--rose-pale);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      animation: fadeUp 1s ease 1s both;
+      opacity: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--rose);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      z-index: -1;
+    }
+    .hero-cta:hover { color: var(--void); }
+    .hero-cta:hover::before { transform: scaleX(1); }
+
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeDown { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── SERVICES: ALTERNATING HORIZONTAL STRIPS ── */
+    /* Structure: [num 90px] [name 280px] [desc 1fr] [arrow 60px]
+       Different from T1 (3-col card grid), T2 (rows with left-num+arrow), T3 (Art. grid) */
+    .services {
+      background: var(--void);
+      border-top: 1px solid rgba(196,114,138,0.08);
+    }
+    .services-heading {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 5rem 4rem 3rem;
+      display: flex;
+      align-items: baseline;
+      gap: 2rem;
+    }
+    .sh-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.6;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .sh-label::before { content: ''; width: 20px; height: 1px; background: var(--rose); }
+    .sh-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--pearl);
+    }
+    .sh-title em { color: var(--rose-light); font-style: italic; }
+
+    .svc-strip {
+      display: grid;
+      grid-template-columns: 90px minmax(220px, 280px) 1fr 60px;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem 4rem;
+      border-bottom: 1px solid rgba(196,114,138,0.07);
+      transition: background 0.25s;
+      cursor: default;
+    }
+    .svc-strip:nth-child(even) { background: var(--void-mid); }
+    .svc-strip:hover { background: var(--void-light); }
+    .svc-strip:hover .strip-arrow { color: var(--rose); transform: translateX(5px); }
+
+    .strip-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: rgba(196,114,138,0.2);
+      line-height: 1;
+      text-align: right;
+    }
+    .strip-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--pearl);
+      letter-spacing: 0.02em;
+    }
+    .strip-desc {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(245,238,242,0.38);
+      line-height: 1.7;
+    }
+    .strip-arrow {
+      font-size: 1rem;
+      color: rgba(196,114,138,0.25);
+      text-align: center;
+      transition: color 0.25s, transform 0.25s;
+    }
+
+    /* ── STATS BAND ── */
+    .stats-band {
+      background: var(--void-light);
+      border-top: 1px solid rgba(196,114,138,0.1);
+      border-bottom: 1px solid rgba(196,114,138,0.1);
+      padding: 3.5rem 4rem;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .stat-item {
+      flex: 1;
+      max-width: 220px;
+      text-align: center;
+      padding: 0 2rem;
+      border-right: 1px solid rgba(196,114,138,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--rose-light);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(196,114,138,0.45);
+    }
+
+    /* ── ABOUT: SPLIT PANEL 40/60 ── */
+    /* Left = dark panel with SVG + name. Right = open with quote + bio + creds.
+       Different from T1 (text+credBox), T2 (quote+3col), T3 (bio+dataTable) */
+    .about {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      min-height: 520px;
+    }
+    .about-left {
+      background: var(--void-light);
+      border-right: 1px solid rgba(196,114,138,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 3rem;
+      text-align: center;
+      gap: 1.5rem;
+      position: relative;
+    }
+    .about-left::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196,114,138,0.3), transparent);
+    }
+    .about-medallion-sm {
+      width: 80px;
+      height: 80px;
+      opacity: 0.55;
+    }
+    .about-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--pearl);
+      line-height: 1.15;
+    }
+    .about-name em { color: var(--rose-light); font-style: italic; }
+    .about-role {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(196,114,138,0.5);
+    }
+    .about-contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .about-contact-item {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: rgba(245,238,242,0.35);
+    }
+    .about-contact-item a { color: inherit; text-decoration: none; }
+
+    .about-right {
+      background: var(--void-mid);
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .about-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      font-weight: 300;
+      color: var(--pearl-dim);
+      line-height: 1.55;
+      padding-left: 1.5rem;
+      border-left: 1px solid var(--rose);
+    }
+    .about-quote em { color: var(--rose-light); font-style: normal; }
+    .about-bio {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(245,238,242,0.42);
+      line-height: 2;
+      letter-spacing: 0.02em;
+    }
+    .creds {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .creds li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: rgba(245,238,242,0.4);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(196,114,138,0.05);
+    }
+    .creds li:last-child { border-bottom: none; }
+    .creds li::before { content: '—'; color: var(--rose); opacity: 0.4; flex-shrink: 0; font-family: 'Cormorant Garamond', serif; }
+
+    /* ── CONTACT: CENTERED FORM ── */
+    /* Info as horizontal meta-row at top, form centered below.
+       No 2-col split — totally different from all 3 templates. */
+    .contact {
+      background: var(--void);
+      border-top: 1px solid rgba(196,114,138,0.08);
+      padding: 6rem 2rem;
+    }
+    .contact-top {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+    .contact-section-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.55;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .contact-section-label::before,
+    .contact-section-label::after { content: ''; width: 20px; height: 1px; background: var(--rose); opacity: 0.5; }
+    .contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--pearl);
+      margin-bottom: 2.5rem;
+    }
+    /* horizontal contact meta row */
+    .contact-meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      border: 1px solid rgba(196,114,138,0.08);
+      padding: 0;
+    }
+    .contact-meta-item {
+      flex: 1;
+      min-width: 160px;
+      padding: 1.5rem 2rem;
+      border-right: 1px solid rgba(196,114,138,0.08);
+      text-align: center;
+    }
+    .contact-meta-item:last-child { border-right: none; }
+    .cmi-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.5;
+      margin-bottom: 0.4rem;
+    }
+    .cmi-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(245,238,242,0.55);
+      line-height: 1.4;
+    }
+    .cmi-value a { color: inherit; text-decoration: none; }
+
+    /* centered form */
+    .contact-form-wrap {
+      max-width: 720px;
+      margin: 3.5rem auto 0;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .field { display: flex; flex-direction: column; gap: 0.45rem; }
+    .field label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.5;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(196,114,138,0.15);
+      color: var(--pearl-dim);
+      padding: 0.8rem 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      outline: none;
+      letter-spacing: 0.04em;
+      transition: border-color 0.25s;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus { border-bottom-color: rgba(196,114,138,0.5); }
+    .field textarea { resize: none; min-height: 90px; }
+    .field select option { background: var(--void-light); }
+    .field input::placeholder,
+    .field textarea::placeholder { color: rgba(245,238,242,0.16); }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-submit {
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--rose);
+      color: var(--rose-pale);
+      padding: 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+    .form-submit::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--rose);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+    .form-submit:hover { color: var(--void); }
+    .form-submit:hover::before { transform: scaleX(1); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--void-mid);
+      border-top: 1px solid rgba(196,114,138,0.07);
+      padding: 2.5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(245,238,242,0.3);
+    }
+    .footer-logo em { color: rgba(196,114,138,0.35); font-style: italic; }
+    .footer-legal { font-size: 0.56rem; letter-spacing: 0.12em; color: rgba(245,238,242,0.14); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-size: 0.56rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,238,242,0.2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(245,238,242,0.45); }
+
+    /* scroll reveal */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── HAMBURGER ── */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 301;
+    }
+    .menu-btn span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: currentColor;
+      transition: all 0.25s;
+    }
+    .menu-btn.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+    .menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+    @media (max-width: 768px) {
+      .menu-btn { display: flex; color: var(--pearl); }
+      .site-header { padding: 1rem 1.5rem; }
+      #site-nav {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(26,14,28,0.97); backdrop-filter: blur(24px);
+        flex-direction: column; align-items: center; justify-content: center;
+        gap: 2.5rem; display: none; z-index: 250;
+      }
+      #site-nav.open { display: flex; }
+      #site-nav a { font-size: 1rem; letter-spacing: 0.25em; color: var(--pearl) !important; border: none !important; padding: 0 !important; background: none !important; }
+      /* hero: hide flanks, center only */
+      .hero { grid-template-columns: 1fr; }
+      .hero-flank { display: none; }
+      .hero-center { padding: 7rem 1.5rem 3rem; }
+      .hero-medallion { width: 200px; height: 200px; }
+      .hero-title { font-size: clamp(2rem, 9vw, 3rem); }
+      /* services */
+      .svc-strip { grid-template-columns: 56px 1fr; gap: 1rem; padding: 1.5rem 1.5rem; }
+      .strip-arrow { display: none; }
+      .strip-num { font-size: 1.4rem; }
+      /* stats */
+      .stats-band { flex-wrap: wrap; padding: 2rem 1rem; gap: 0; }
+      .stat-item { min-width: 50%; border-right: none; border-bottom: 1px solid rgba(196,114,138,0.1); padding: 1.2rem 1rem; }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(196,114,138,0.1); }
+      /* about */
+      .about { grid-template-columns: 1fr; }
+      .about-left { padding: 3rem 1.5rem; min-height: auto; }
+      .about-right { padding: 3rem 1.5rem; }
+      /* contact */
+      .contact { padding: 4rem 1.5rem; }
+      .contact-meta { flex-direction: column; }
+      .contact-meta-item { border-right: none; border-bottom: 1px solid rgba(196,114,138,0.08); min-width: unset; }
+      .contact-meta-item:last-child { border-bottom: none; }
+      .contact-form-wrap { padding: 0; }
+      .form-row { grid-template-columns: 1fr; }
+      /* footer */
+      footer { flex-direction: column; align-items: center; text-align: center; padding: 2rem 1.5rem; gap: 0.8rem; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="header-logo">Notaría <em>de San Ramón</em></div>
+    
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav id="site-nav" class="header-nav" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">La Notaria</a>
+      <a href="#contacto" class="cta">Solicitar Hora</a>
+    </nav>
+  </header>
+
+  <!-- HERO: 3-COLUMN CENTERED MEDALLION -->
+  <section class="hero" id="inicio" aria-labelledby="hero-heading">
+
+    <!-- flank izquierdo: datos de dirección y teléfono -->
+    <div class="hero-flank hero-flank--left" aria-label="Información de contacto">
+      <div class="flank-item">
+        <div class="flank-label">Dirección</div>
+        <div class="flank-value">Av. Sta. Rosa<br/>Nº 7955<br/>San Ramón</div>
+      </div>
+      <div class="flank-item">
+        <div class="flank-label">Teléfonos</div>
+        <div class="flank-value">
+          <a href="tel:+56225114689">2-2511 4689</a><br/>
+          <a href="tel:+56226150414">2-2615 0414</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- centro: medallón + nombre -->
+    <div class="hero-center">
+      <p class="hero-pre">Fe Pública · Certeza Jurídica</p>
+
+      <!-- Rose window SVG medallion — unique to this template -->
+      <svg class="hero-medallion" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Medallón decorativo">
+        <circle cx="100" cy="100" r="94" stroke="#C4728A" stroke-width="0.8" opacity="0.3"/>
+        <circle cx="100" cy="100" r="85" stroke="#C4728A" stroke-width="0.4" stroke-dasharray="2 3" opacity="0.2"/>
+        <!-- 8 outer petals -->
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.18" transform="rotate(0 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.18" transform="rotate(45 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.18" transform="rotate(90 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.18" transform="rotate(135 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.18" transform="rotate(180 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.18" transform="rotate(225 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.18" transform="rotate(270 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.18" transform="rotate(315 100 100)"/>
+        <!-- middle ring -->
+        <circle cx="100" cy="100" r="52" stroke="#C4728A" stroke-width="0.8" opacity="0.35"/>
+        <!-- 8 inner petals -->
+        <ellipse cx="100" cy="76" rx="7" ry="18" fill="#C4728A" opacity="0.14" transform="rotate(0 100 100)"/>
+        <ellipse cx="100" cy="76" rx="7" ry="18" fill="#C4728A" opacity="0.14" transform="rotate(45 100 100)"/>
+        <ellipse cx="100" cy="76" rx="7" ry="18" fill="#C4728A" opacity="0.14" transform="rotate(90 100 100)"/>
+        <ellipse cx="100" cy="76" rx="7" ry="18" fill="#C4728A" opacity="0.14" transform="rotate(135 100 100)"/>
+        <ellipse cx="100" cy="76" rx="7" ry="18" fill="#C4728A" opacity="0.14" transform="rotate(180 100 100)"/>
+        <ellipse cx="100" cy="76" rx="7" ry="18" fill="#C4728A" opacity="0.14" transform="rotate(225 100 100)"/>
+        <ellipse cx="100" cy="76" rx="7" ry="18" fill="#C4728A" opacity="0.14" transform="rotate(270 100 100)"/>
+        <ellipse cx="100" cy="76" rx="7" ry="18" fill="#C4728A" opacity="0.14" transform="rotate(315 100 100)"/>
+        <!-- inner rings -->
+        <circle cx="100" cy="100" r="26" stroke="#C4728A" stroke-width="1" opacity="0.4"/>
+        <circle cx="100" cy="100" r="14" stroke="#C4728A" stroke-width="0.6" opacity="0.35"/>
+        <!-- center -->
+        <circle cx="100" cy="100" r="5" fill="#C4728A" opacity="0.55"/>
+        <!-- axis lines -->
+        <line x1="100" y1="8" x2="100" y2="192" stroke="#C4728A" stroke-width="0.35" opacity="0.12"/>
+        <line x1="8" y1="100" x2="192" y2="100" stroke="#C4728A" stroke-width="0.35" opacity="0.12"/>
+        <line x1="35" y1="35" x2="165" y2="165" stroke="#C4728A" stroke-width="0.35" opacity="0.12"/>
+        <line x1="165" y1="35" x2="35" y2="165" stroke="#C4728A" stroke-width="0.35" opacity="0.12"/>
+        <!-- diamond cardinal markers -->
+        <polygon points="100,7 104,15 100,23 96,15" fill="#C4728A" opacity="0.4"/>
+        <polygon points="193,100 185,104 177,100 185,96" fill="#C4728A" opacity="0.4"/>
+        <polygon points="100,193 104,185 100,177 96,185" fill="#C4728A" opacity="0.4"/>
+        <polygon points="7,100 15,104 23,100 15,96" fill="#C4728A" opacity="0.4"/>
+      </svg>
+
+      <h1 class="hero-title" id="hero-heading">
+        Notaría<br/><em>de San Ramón</em>
+      </h1>
+      <p class="hero-notary">Lic. Marcela Medina Ricci · Notaria Pública</p>
+      <a href="#contacto" class="hero-cta">Solicitar Hora</a>
+    </div>
+
+    <!-- flanco derecho: horario y correo -->
+    <div class="hero-flank hero-flank--right" aria-label="Horario y contacto">
+      <div class="flank-item">
+        <div class="flank-label">Horario</div>
+        <div class="flank-value">Lunes a Viernes<br/>09:00 – 17:30 hrs</div>
+      </div>
+      <div class="flank-item">
+        <div class="flank-label">Correo</div>
+        <div class="flank-value">
+          <a href="mailto:notariasanramon@gmail.com" style="word-break:break-all;">notariasanramon<br/>@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SERVICES: ALTERNATING HORIZONTAL STRIPS -->
+  <section class="services" id="servicios" aria-labelledby="svc-heading">
+    <div class="services-heading">
+      <span class="sh-label">Servicios Notariales</span>
+      <h2 class="sh-title" id="svc-heading">Precisión en <em>cada instrumento.</em></h2>
+    </div>
+
+    <div class="svc-strip reveal" role="listitem">
+      <div class="strip-num">01</div>
+      <div class="strip-name">Escrituras Públicas</div>
+      <div class="strip-desc">Compraventa de inmuebles, contratos, hipotecas y todo acto que requiera plena fe pública notarial.</div>
+      <div class="strip-arrow" aria-hidden="true">→</div>
+    </div>
+    <div class="svc-strip reveal" role="listitem">
+      <div class="strip-num">02</div>
+      <div class="strip-name">Testamentos</div>
+      <div class="strip-desc">Redacción y otorgamiento de testamento público con plena validez jurídica y confidencialidad absoluta.</div>
+      <div class="strip-arrow" aria-hidden="true">→</div>
+    </div>
+    <div class="svc-strip reveal" role="listitem">
+      <div class="strip-num">03</div>
+      <div class="strip-name">Poderes Notariales</div>
+      <div class="strip-desc">Mandatos y poderes especiales o generales para representación legal ante cualquier institución.</div>
+      <div class="strip-arrow" aria-hidden="true">→</div>
+    </div>
+    <div class="svc-strip reveal" role="listitem">
+      <div class="strip-num">04</div>
+      <div class="strip-name">Certificaciones</div>
+      <div class="strip-desc">Certificación de firmas, copias auténticas y documentos con validez oficial e inmediata.</div>
+      <div class="strip-arrow" aria-hidden="true">→</div>
+    </div>
+    <div class="svc-strip reveal" role="listitem">
+      <div class="strip-num">05</div>
+      <div class="strip-name">Compraventas</div>
+      <div class="strip-desc">Transferencia de bienes con seguridad jurídica plena para vendedor y comprador.</div>
+      <div class="strip-arrow" aria-hidden="true">→</div>
+    </div>
+    <div class="svc-strip reveal" role="listitem">
+      <div class="strip-num">06</div>
+      <div class="strip-name">Protocolizaciones</div>
+      <div class="strip-desc">Incorporación de documentos privados al protocolo notarial con fe pública plena.</div>
+      <div class="strip-arrow" aria-hidden="true">→</div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <div class="stats-band reveal" role="list" aria-label="Cifras destacadas">
+    <div class="stat-item" role="listitem">
+      <div class="stat-num">+20</div>
+      <div class="stat-label">Años de ejercicio</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Servicios notariales</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Fe pública garantizada</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Atención directa · Titular</div>
+    </div>
+  </div>
+
+  <!-- ABOUT: PANEL SPLIT 40/60 -->
+  <section class="about" id="nosotros" aria-labelledby="about-heading">
+    <!-- left dark panel: identity -->
+    <div class="about-left reveal">
+      <svg class="about-medallion-sm" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <circle cx="100" cy="100" r="94" stroke="#C4728A" stroke-width="1" opacity="0.3"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.2" transform="rotate(0 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.2" transform="rotate(90 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.2" transform="rotate(180 100 100)"/>
+        <ellipse cx="100" cy="62" rx="11" ry="30" fill="#C4728A" opacity="0.2" transform="rotate(270 100 100)"/>
+        <circle cx="100" cy="100" r="52" stroke="#C4728A" stroke-width="0.8" opacity="0.35"/>
+        <circle cx="100" cy="100" r="14" stroke="#C4728A" stroke-width="0.6" opacity="0.35"/>
+        <circle cx="100" cy="100" r="5" fill="#C4728A" opacity="0.5"/>
+      </svg>
+      <div class="about-name" id="about-heading">Lic. Marcela<br/><em>Medina Ricci</em></div>
+      <div class="about-role">Notaria Pública Titular</div>
+      <div class="about-contact-items">
+        <div class="about-contact-item">Notaría de San Ramón</div>
+        <div class="about-contact-item">Av. Sta. Rosa Nº 7955</div>
+        <div class="about-contact-item"><a href="mailto:notariasanramon@gmail.com">notariasanramon@gmail.com</a></div>
+      </div>
+    </div>
+
+    <!-- right panel: quote + bio + credentials -->
+    <div class="about-right reveal">
+      <blockquote class="about-quote">
+        "Mi compromiso no termina con la firma del instrumento.<br/>
+        La certeza jurídica que otorgo en cada acto notarial<br/>
+        es mi <em>sello personal</em>."
+      </blockquote>
+      <p class="about-bio">
+        Notaria titular de la Notaría de San Ramón. Especialista en derecho inmobiliario,
+        familiar y sucesorio. Su práctica se distingue por la precisión jurídica y la
+        atención directa y personalizada a cada cliente. Más de dos décadas de ejercicio
+        notarial en San Ramón con vocación de servicio.
+      </p>
+      <ul class="creds">
+        <li>Licenciada en Derecho con mención en Derecho Notarial</li>
+        <li>Especialista en derecho inmobiliario y sucesorio</li>
+        <li>Miembro activa · Asociación de Notarios de Chile</li>
+        <li>Más de 20 años de ejercicio notarial en San Ramón</li>
+        <li>Atención personalizada y directa en cada trámite</li>
+        <li>Confidencialidad y seriedad profesional garantizadas</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT: CENTERED FORM -->
+  <section class="contact" id="contacto" aria-labelledby="contact-heading">
+    <div class="contact-top reveal">
+      <div class="contact-section-label" aria-hidden="true">Contáctenos</div>
+      <h2 class="contact-title" id="contact-heading">Estamos aquí para orientarle.</h2>
+      <div class="contact-meta" role="list">
+        <div class="contact-meta-item" role="listitem">
+          <div class="cmi-label">Dirección</div>
+          <div class="cmi-value">Av. Sta. Rosa Nº 7955<br/>San Ramón</div>
+        </div>
+        <div class="contact-meta-item" role="listitem">
+          <div class="cmi-label">Teléfonos</div>
+          <div class="cmi-value">
+            <a href="tel:+56225114689">2-2511 4689</a><br/>
+            <a href="tel:+56226150414">2-2615 0414</a>
+          </div>
+        </div>
+        <div class="contact-meta-item" role="listitem">
+          <div class="cmi-label">Correo</div>
+          <div class="cmi-value"><a href="mailto:notariasanramon@gmail.com">notariasanramon@gmail.com</a></div>
+        </div>
+        <div class="contact-meta-item" role="listitem">
+          <div class="cmi-label">Horario</div>
+          <div class="cmi-value">Lunes a Viernes<br/>09:00 – 17:30 hrs</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap reveal">
+      <form action="#" method="post" aria-label="Formulario de contacto">
+        <div class="form-row">
+          <div class="field">
+            <label for="t4-name">Nombre</label>
+            <input type="text" id="t4-name" name="name" placeholder="Su nombre completo" />
+          </div>
+          <div class="field">
+            <label for="t4-phone">Teléfono</label>
+            <input type="tel" id="t4-phone" name="phone" placeholder="+56 9 XXXX XXXX" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="field">
+            <label for="t4-email">Correo Electrónico</label>
+            <input type="email" id="t4-email" name="email" placeholder="su@correo.cl" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="field">
+            <label for="t4-service">Tipo de Trámite</label>
+            <select id="t4-service" name="service">
+              <option value="">Seleccionar servicio</option>
+              <option>Escritura Pública</option>
+              <option>Testamento</option>
+              <option>Poder Notarial</option>
+              <option>Certificación</option>
+              <option>Compraventa</option>
+              <option>Protocolización</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="field">
+            <label for="t4-msg">Mensaje</label>
+            <textarea id="t4-msg" name="message" placeholder="Cuéntenos su consulta o trámite..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Enviar Consulta</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Notaría <em>de San Ramón</em></div>
+    <div class="footer-legal">© 2025 · Lic. Marcela Medina Ricci · Notaría de San Ramón · Todos los derechos reservados</div>
+    <div class="footer-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">La Notaria</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </footer>
+
+  <TemplateNav client:load />
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header?.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), (i % 4) * 90);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => obs.observe(el));
+
+    // Hamburger menu
+    const menuBtn = document.getElementById('menu-btn');
+    const siteNav = document.getElementById('site-nav');
+    menuBtn?.addEventListener('click', () => {
+      const open = menuBtn.classList.toggle('open');
+      if (siteNav) siteNav.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

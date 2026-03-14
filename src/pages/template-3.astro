@@ -1,0 +1,675 @@
+---
+import TemplateNav from '../components/TemplateNav.tsx';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notaría de San Ramón — Lic. Marcela Medina Ricci</title>
+  <meta name="description" content="Notaría de San Ramón. Servicios notariales con la solemnidad y precisión que cada acto jurídico merece. Lic. Marcela Medina Ricci, notaria titular." />
+  <meta property="og:title" content="Notaría de San Ramón — Lic. Marcela Medina Ricci" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://notariasanramon.cl" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LegalService","name":"Notaría de San Ramón","address":{"@type":"PostalAddress","streetAddress":"Av. Sta. Rosa Nº 7955","addressLocality":"San Ramón","addressCountry":"CL"},"telephone":"2-2511 4689","email":"notariasanramon@gmail.com","openingHours":"Mo-Fr 09:00-17:30"}
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --paper: #FAFAF8;
+      --paper-warm: #F4F0E8;
+      --paper-dark: #E8E4DC;
+      --ink: #0C0C0A;
+      --ink-mid: #2C2820;
+      --ink-light: #5A5248;
+      --prussian: #0D2545;
+      --prussian-mid: #163460;
+      --prussian-light: #1E4A80;
+      --rule: #D0C8BC;
+      --rule-light: #E8E0D4;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ── DOCUMENT HEADER ── */
+    .doc-top {
+      background: var(--prussian);
+      padding: 0;
+    }
+    .doc-top-meta {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .doc-meta-item {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.05em;
+    }
+    .doc-meta-item strong { color: rgba(255,255,255,0.7); }
+    .doc-meta-sep { color: rgba(255,255,255,0.15); }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--paper);
+      border-bottom: 3px double var(--rule);
+    }
+    .header-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.1rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .logo em { font-style: italic; color: var(--prussian); }
+    nav { display: flex; align-items: center; gap: 2.5rem; }
+    nav a {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.7rem;
+      font-style: italic;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--prussian); }
+    .nav-prussian {
+      color: var(--prussian) !important;
+      font-style: normal !important;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(13,37,69,0.3);
+    }
+
+    /* ── DOCUMENT WRAPPER — centered column ── */
+    .doc {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── HERO / DOCUMENT OPENING ── */
+    .doc-opening {
+      padding: 5rem 0 4rem;
+      border-bottom: 2px solid var(--ink);
+      position: relative;
+    }
+    .doc-number {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.75rem;
+      color: var(--ink-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .doc-number::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+    h1 {
+      font-family: 'IM Fell English', serif;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--prussian);
+    }
+    .doc-preamble {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1rem;
+      color: var(--ink-mid);
+      line-height: 1.9;
+      max-width: 640px;
+      margin-bottom: 3rem;
+      font-style: italic;
+    }
+    .doc-preamble strong { font-style: normal; color: var(--ink); }
+    .doc-actions { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+    .btn-prussian {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: var(--prussian);
+      color: rgba(255,255,255,0.9);
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border: 1px solid var(--prussian);
+      transition: all 0.2s;
+    }
+    .btn-prussian:hover { background: var(--prussian-mid); border-color: var(--prussian-mid); }
+    .btn-ghost {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--ink-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--prussian); border-bottom-color: var(--prussian); }
+
+    /* ── SEAL / STAMP ELEMENT ── */
+    .doc-seal-row {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--rule-light);
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .seal-svg { width: 70px; height: 70px; flex-shrink: 0; }
+    .seal-text { display: flex; flex-direction: column; gap: 0.3rem; }
+    .seal-main {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.9rem;
+      color: var(--prussian);
+      letter-spacing: 0.04em;
+    }
+    .seal-sub {
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--ink-light);
+    }
+    .seal-data { margin-left: auto; text-align: right; }
+    .seal-data-row { font-size: 0.7rem; color: var(--ink-light); display: flex; gap: 0.5rem; align-items: baseline; justify-content: flex-end; }
+    .seal-data-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rule); }
+
+    /* ── SERVICES — LEGAL ARTICLES ── */
+    .services {
+      padding: 4rem 0;
+      border-bottom: 2px solid var(--ink);
+    }
+    .art-heading {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--prussian);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .art-heading::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+    h2 {
+      font-family: 'IM Fell English', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+    .art-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .art-item {
+      padding: 2rem 1.5rem;
+      border-bottom: 1px solid var(--rule-light);
+      border-right: 1px solid var(--rule-light);
+      transition: background 0.2s;
+    }
+    .art-item:nth-child(even) { border-right: none; }
+    .art-item:nth-last-child(-n+2) { border-bottom: none; }
+    .art-item:hover { background: rgba(13,37,69,0.025); }
+    .art-num {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.7rem;
+      color: var(--prussian);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      opacity: 0.7;
+    }
+    .art-name {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+    .art-desc {
+      font-size: 0.85rem;
+      color: var(--ink-light);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* ── ABOUT / PROFILE ── */
+    .about {
+      padding: 4rem 0;
+      border-bottom: 2px solid var(--ink);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    .about-profile { }
+    .profile-heading {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--prussian);
+      margin-bottom: 1.5rem;
+    }
+    .profile-name {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .profile-name em { font-style: italic; color: var(--prussian); }
+    .profile-text {
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+    .profile-quote {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--prussian);
+      background: var(--paper-warm);
+    }
+    .profile-quote p {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+    .about-data { }
+    .data-section-title {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--prussian);
+      margin-bottom: 1.5rem;
+    }
+    .data-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.85rem 0;
+      border-bottom: 1px dotted var(--rule);
+      gap: 1rem;
+    }
+    .data-row:last-child { border-bottom: none; }
+    .data-key {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--ink-light);
+      flex-shrink: 0;
+    }
+    .data-dots { flex: 1; border-bottom: 1px dotted var(--rule-light); margin-bottom: 4px; }
+    .data-val {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--prussian);
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 4rem 0 5rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    .contact-title {
+      font-family: 'IM Fell English', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+    .contact-title em { font-style: italic; color: var(--prussian); }
+    .cdata { margin-bottom: 1.5rem; }
+    .cdata-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--prussian); opacity: 0.7; margin-bottom: 0.25rem; }
+    .cdata-val { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.6; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .field { display: flex; flex-direction: column; gap: 0.35rem; }
+    .field label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); font-style: italic; }
+    .field input, .field select, .field textarea {
+      background: var(--paper-warm);
+      border: 1px solid var(--rule);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom-color: var(--rule);
+      color: var(--ink);
+      padding: 0.6rem 0.5rem;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      background: transparent;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-bottom-color: var(--prussian);
+    }
+    .field textarea { resize: none; min-height: 80px; }
+    .field input::placeholder, .field textarea::placeholder { color: var(--rule); font-style: italic; }
+    .btn-submit-doc {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 2rem;
+      background: var(--prussian);
+      color: rgba(255,255,255,0.9);
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    .btn-submit-doc:hover { background: var(--prussian-mid); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--paper-dark);
+      border-top: 2px solid var(--ink);
+      padding: 2rem 0;
+    }
+    .footer-doc {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-name { font-family: 'IM Fell English', serif; font-size: 0.85rem; color: var(--ink-mid); }
+    .footer-legal { font-size: 0.72rem; color: var(--ink-light); font-style: italic; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes t8In { from { opacity: 0; } to { opacity: 1; } }
+    .doc-opening > * { animation: t8In 0.7s ease forwards; opacity: 0; }
+    .doc-opening > *:nth-child(1) { animation-delay: 0.1s; }
+    .doc-opening > *:nth-child(2) { animation-delay: 0.25s; }
+    .doc-opening > *:nth-child(3) { animation-delay: 0.4s; }
+    .doc-opening > *:nth-child(4) { animation-delay: 0.55s; }
+
+    /* ── HAMBURGER ── */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 301;
+    }
+    .menu-btn span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: currentColor;
+      transition: all 0.25s;
+    }
+    .menu-btn.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+    .menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+    @media (max-width: 768px) {
+      .menu-btn { display: flex; color: var(--ink); }
+      .header-inner { padding: 0 1.5rem; }
+      #site-nav {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(250,250,248,0.98); backdrop-filter: blur(24px);
+        flex-direction: column; align-items: center; justify-content: center;
+        gap: 2.5rem; display: none; z-index: 250;
+      }
+      #site-nav.open { display: flex; }
+      #site-nav a { font-size: 1rem; letter-spacing: 0.22em; color: var(--ink) !important; }
+      /* top meta bar */
+      .doc-top-meta { flex-wrap: wrap; justify-content: center; gap: 0.35rem 1rem; padding: 0.75rem 1.2rem; }
+      .doc-meta-sep { display: none; }
+      /* doc */
+      .doc { padding: 0 1.2rem; }
+      .doc-opening { padding: 2rem 0; }
+      .doc-opening h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
+      .doc-actions { flex-direction: column; gap: 0.8rem; }
+      .btn-prussian, .btn-ghost { text-align: center; width: 100%; }
+      /* seal row — uses display:flex not grid */
+      .doc-seal-row { flex-direction: column; align-items: center; text-align: center; gap: 1rem; padding: 1.5rem 0; }
+      .seal-svg { width: 64px; height: 64px; }
+      .seal-data { margin-left: 0; text-align: center; }
+      .seal-data-row { justify-content: center; }
+      /* services */
+      .art-grid { grid-template-columns: 1fr; }
+      .art-item { border-right: none; }
+      /* about */
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      /* contact */
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      /* footer */
+      .footer-doc { flex-direction: column; align-items: center; text-align: center; gap: 0.8rem; padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DOCUMENT TOP METADATA BAR -->
+  <div class="doc-top">
+    <div class="doc-top-meta">
+      <span class="doc-meta-item"><strong>Notaría de San Ramón</strong></span>
+      <span class="doc-meta-sep">·</span>
+      <span class="doc-meta-item">Av. Sta. Rosa Nº 7955, San Ramón</span>
+      <span class="doc-meta-sep">·</span>
+      <span class="doc-meta-item"><strong>2-2511 4689</strong></span>
+      <span class="doc-meta-sep">·</span>
+      <span class="doc-meta-item">Lun – Vie · 09:00 – 17:30</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">Notaría <em>de San Ramón</em></a>
+      
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav id="site-nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">La Notaria</a>
+        <a href="#contacto" class="nav-prussian">Consultar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- DOCUMENT OPENING -->
+  <div class="doc">
+    <div class="doc-opening">
+      <div class="doc-number">Protocolo General Abierto &nbsp;&nbsp; Fe Pública Notarial · San Ramón</div>
+      <h1>La certeza jurídica<br/>que <em>cada acto merece.</em></h1>
+      <p class="doc-preamble">
+        La Notaría de San Ramón, bajo la titularidad de la <strong>Lic. Marcela Medina Ricci</strong>,
+        presta sus servicios notariales con la solemnidad y el rigor que cada instrumento exige.
+        Cada documento que sale de esta notaría es garantía de validez y permanencia jurídica.
+      </p>
+      <div class="doc-actions">
+        <a href="#contacto" class="btn-prussian">Solicitar Cita</a>
+        <a href="#servicios" class="btn-ghost">Ver servicios</a>
+      </div>
+    </div>
+
+    <!-- SEAL ROW -->
+    <div class="doc-seal-row">
+      <svg class="seal-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="46" stroke="#0D2545" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="50" cy="50" r="38" stroke="#0D2545" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.4"/>
+        <circle cx="50" cy="50" r="26" stroke="#0D2545" stroke-width="0.8" fill="none" opacity="0.3"/>
+        <path d="M35 50 Q50 35 65 50 Q50 65 35 50Z" stroke="#0D2545" stroke-width="1" fill="rgba(13,37,69,0.06)" opacity="0.7"/>
+        <text x="50" y="54" text-anchor="middle" font-family="Georgia" font-size="9" fill="#0D2545" opacity="0.7" letter-spacing="0.5">FE PÚBLICA</text>
+        <text x="50" y="91" text-anchor="middle" font-family="Georgia" font-size="5.5" fill="#0D2545" opacity="0.4" letter-spacing="2">NOTARÍA · SAN RAMÓN</text>
+      </svg>
+      <div class="seal-text">
+        <div class="seal-main">Notaría de San Ramón</div>
+        <div class="seal-sub">Lic. Marcela Medina Ricci, Notaria Titular</div>
+        <div class="seal-sub">Av. Sta. Rosa Nº 7955 · San Ramón</div>
+      </div>
+      <div class="seal-data">
+        <div class="seal-data-row"><span class="seal-data-label">Teléfono</span> 2-2511 4689</div>
+        <div class="seal-data-row"><span class="seal-data-label">Correo</span> notariasanramon@gmail.com</div>
+        <div class="seal-data-row"><span class="seal-data-label">Horario</span> Lun–Vie 09:00–17:30</div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="servicios">
+      <div class="art-heading">Artículos Notariales</div>
+      <h2>Servicios que ofrecemos</h2>
+      <div class="art-grid">
+        <div class="art-item">
+          <div class="art-num">Art. I</div>
+          <div class="art-name">Escrituras Públicas</div>
+          <p class="art-desc">Compraventa, hipoteca, donación y contratos sobre bienes inmuebles. Revisión jurídica completa.</p>
+        </div>
+        <div class="art-item">
+          <div class="art-num">Art. II</div>
+          <div class="art-name">Testamentos</div>
+          <p class="art-desc">Testamento público abierto. Su voluntad, redactada con precisión y validez permanente.</p>
+        </div>
+        <div class="art-item">
+          <div class="art-num">Art. III</div>
+          <div class="art-name">Poderes Notariales</div>
+          <p class="art-desc">Poderes generales y especiales para dominio, administración y representación plena.</p>
+        </div>
+        <div class="art-item">
+          <div class="art-num">Art. IV</div>
+          <div class="art-name">Actas Notariales</div>
+          <p class="art-desc">Actas de hechos, notoriedad, asambleas e inventarios con fe pública auténtica.</p>
+        </div>
+        <div class="art-item">
+          <div class="art-num">Art. V</div>
+          <div class="art-name">Certificaciones</div>
+          <p class="art-desc">Certificación de firmas y documentos. Legalización para uso nacional e internacional.</p>
+        </div>
+        <div class="art-item">
+          <div class="art-num">Art. VI</div>
+          <div class="art-name">Sucesiones</div>
+          <p class="art-desc">Juicios sucesorios, adjudicación y regularización del patrimonio familiar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="nosotros">
+      <div class="about-grid">
+        <div class="about-profile">
+          <div class="profile-heading">Perfil de la Titular</div>
+          <div class="profile-name">Lic. Marcela <em>Medina Ricci</em></div>
+          <p class="profile-text">Notaria titular de la Notaría de San Ramón. Especialista en derecho inmobiliario, familiar y sucesorio. Su práctica se distingue por la precisión jurídica y la atención directa a cada cliente.</p>
+          <p class="profile-text">Atiende personalmente cada caso, garantizando que cada instrumento sea comprendido y firmado con plena convicción por todas las partes.</p>
+          <div class="profile-quote">
+            <p>"La fe pública no es solo una función. Es una responsabilidad hacia quienes depositan en este despacho lo más importante de su vida."</p>
+          </div>
+        </div>
+        <div class="about-data">
+          <div class="data-section-title">Datos del Despacho</div>
+          <div class="data-row"><span class="data-key">Titular</span><span class="data-dots"></span><span class="data-val">Lic. Marcela Medina Ricci</span></div>
+          <div class="data-row"><span class="data-key">Notaría</span><span class="data-dots"></span><span class="data-val">Notaría de San Ramón</span></div>
+          <div class="data-row"><span class="data-key">Domicilio</span><span class="data-dots"></span><span class="data-val">Av. Sta. Rosa Nº 7955</span></div>
+          <div class="data-row"><span class="data-key">Localidad</span><span class="data-dots"></span><span class="data-val">San Ramón</span></div>
+          <div class="data-row"><span class="data-key">Teléfono</span><span class="data-dots"></span><span class="data-val">2-2511 4689</span></div>
+          <div class="data-row"><span class="data-key">Alternativo</span><span class="data-dots"></span><span class="data-val">2-2615 0414</span></div>
+          <div class="data-row"><span class="data-key">Correo</span><span class="data-dots"></span><span class="data-val">notariasanramon@gmail.com</span></div>
+          <div class="data-row"><span class="data-key">Horario</span><span class="data-dots"></span><span class="data-val">Lun–Vie 09:00–17:30</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contacto">
+      <div class="contact-grid">
+        <div>
+          <h3 class="contact-title">Solicite una<br/><em>consulta.</em></h3>
+          <div class="cdata"><div class="cdata-label">Dirección</div><div class="cdata-val">Av. Sta. Rosa Nº 7955<br/>San Ramón</div></div>
+          <div class="cdata"><div class="cdata-label">Teléfono</div><div class="cdata-val">2-2511 4689 · 2-2615 0414</div></div>
+          <div class="cdata"><div class="cdata-label">Correo electrónico</div><div class="cdata-val">notariasanramon@gmail.com</div></div>
+          <div class="cdata"><div class="cdata-label">Horario de atención</div><div class="cdata-val">Lunes a Viernes<br/>09:00 – 17:30 hrs</div></div>
+        </div>
+        <form class="contact-form">
+          <div class="field"><label>Nombre completo</label><input type="text" placeholder="Ingrese su nombre..." /></div>
+          <div class="field"><label>Correo electrónico</label><input type="email" placeholder="correo@ejemplo.cl" /></div>
+          <div class="field"><label>Servicio requerido</label>
+            <select>
+              <option value="">Seleccione un servicio...</option>
+              <option>Escritura Pública</option><option>Testamento</option>
+              <option>Poder Notarial</option><option>Acta Notarial</option>
+              <option>Certificación</option><option>Sucesión</option>
+            </select>
+          </div>
+          <div class="field"><label>Mensaje</label><textarea placeholder="Describa su consulta..."></textarea></div>
+          <button type="submit" class="btn-submit-doc">Enviar Solicitud →</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-doc">
+      <div class="footer-name">Notaría de San Ramón · Lic. Marcela Medina Ricci</div>
+      <div class="footer-legal">© 2025 · Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+  <TemplateNav client:load />
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const siteNav = document.getElementById('site-nav');
+    menuBtn?.addEventListener('click', () => {
+      const open = menuBtn.classList.toggle('open');
+      if (siteNav) siteNav.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>

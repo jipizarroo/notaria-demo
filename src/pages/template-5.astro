@@ -1,0 +1,1141 @@
+---
+import TemplateNav from '../components/TemplateNav.tsx';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notaría de San Ramón – Lic. Marcela Medina Ricci | Fe Pública y Certeza Jurídica</title>
+  <meta name="description" content="Notaría de San Ramón a cargo de la Lic. Marcela Medina Ricci. Escrituras, testamentos, poderes y certificaciones. Av. Sta. Rosa Nº 7955, San Ramón." />
+  <meta name="keywords" content="notaría, San Ramón, Marcela Medina Ricci, escrituras públicas, testamentos, poderes notariales, certificaciones, fe pública" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Notaría de San Ramón – Lic. Marcela Medina Ricci" />
+  <meta property="og:description" content="Fe pública con distinción en San Ramón. Lic. Marcela Medina Ricci, Notaria Pública." />
+  <meta property="og:url" content="https://www.notariasanramon.cl/" />
+  <link rel="canonical" href="https://www.notariasanramon.cl/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Notaría de San Ramón",
+    "description": "Notaría pública a cargo de la Lic. Marcela Medina Ricci",
+    "url": "https://www.notariasanramon.cl",
+    "telephone": ["2-2511 4689","2-2615 0414"],
+    "email": "notariasanramon@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Sta. Rosa Nº 7955",
+      "addressLocality": "San Ramón",
+      "addressCountry": "CL"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "17:30"
+    },
+    "employee": {
+      "@type": "Person",
+      "name": "Lic. Marcela Medina Ricci",
+      "jobTitle": "Notaria Pública"
+    }
+  }</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #FAF6F3;
+      --cream-deep: #F2EAE4;
+      --border:     #DDD0CA;
+      --ink:        #1C1214;
+      --ink-soft:   #3A2A2E;
+      --sage:       #7A9E8C;
+      --sage-light: #A8C4B8;
+      --sage-pale:  #EBF3EF;
+      --blush:      #C4908A;
+      --blush-light:#DDB8B4;
+      --blush-pale: #F5EDEB;
+      --muted:      #8A7070;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ══════════════════════════════════════
+       MASTHEAD — newspaper broadsheet header
+       Replaces a conventional hero+nav combo.
+       UNIQUE: nothing like T1/T2/T3 hero structures.
+    ══════════════════════════════════════ */
+    .masthead {
+      border-bottom: 3px double var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      transition: box-shadow 0.3s;
+    }
+    .masthead.scrolled { box-shadow: 0 2px 20px rgba(28,18,20,0.08); }
+
+    /* dateline / meta bar */
+    .masthead-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.45rem 3rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead-meta-left,
+    .masthead-meta-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .meta-item {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.54rem;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .meta-item a { color: var(--blush); text-decoration: none; }
+    .meta-item strong { color: var(--ink); font-weight: 400; }
+    .meta-sep { color: var(--border); }
+
+    /* title block */
+    .masthead-title-block {
+      text-align: center;
+      padding: 1.2rem 3rem 1rem;
+      position: relative;
+    }
+    .masthead-title-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 3rem; right: 3rem;
+      height: 1px;
+      background: var(--border);
+    }
+    .masthead-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .ornament-line { flex: 1; max-width: 120px; height: 1px; background: var(--border); }
+    .ornament-center {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.65rem;
+      color: var(--blush);
+      letter-spacing: 0.3em;
+    }
+    .masthead-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(2rem, 5.5vw, 4.8rem);
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+    .masthead-title em {
+      color: var(--blush);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .masthead-subtitle {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    /* navigation below title */
+    .masthead-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      margin-top: 0.8rem;
+    }
+    .masthead-nav a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.65rem 2rem;
+      border-right: 1px solid var(--border);
+      transition: color 0.2s, background 0.2s;
+    }
+    .masthead-nav a:first-child { border-left: 1px solid var(--border); }
+    .masthead-nav a:hover { color: var(--ink); background: var(--cream-deep); }
+    .masthead-nav a.cta {
+      background: var(--sage);
+      color: white;
+      border-color: var(--sage);
+    }
+    .masthead-nav a.cta:hover { background: var(--ink); border-color: var(--ink); }
+
+    /* ══════════════════════════════════════
+       BROADSHEET GRID — 3-column newspaper front page
+       Left: services index, Center: main lead, Right: contact sidebar
+       UNIQUE: no template uses this 3-col editorial-newspaper layout
+    ══════════════════════════════════════ */
+    .broadsheet {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      border-bottom: 2px solid var(--border);
+      max-width: 100%;
+    }
+    .bs-col {
+      padding: 2.5rem 2.5rem;
+      border-right: 1px solid var(--border);
+    }
+    .bs-col:last-child { border-right: none; }
+    .bs-col-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--sage);
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--sage);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    /* left col: services index */
+    .bs-index-list { list-style: none; }
+    .bs-index-list li {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--ink-soft);
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+    }
+    .bs-index-list li:last-child { border-bottom: none; }
+    .bs-index-num {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      color: var(--blush);
+      flex-shrink: 0;
+    }
+
+    /* center col: main lead story */
+    .bs-lead-overline {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .bs-lead-overline::before { content: ''; width: 24px; height: 1px; background: var(--blush); }
+    .bs-lead-h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(1.7rem, 3.2vw, 3rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.2rem;
+    }
+    .bs-lead-h1 em { color: var(--sage); font-weight: 400; font-style: italic; }
+    .bs-rule { width: 40px; height: 2px; background: var(--blush); margin: 1.2rem 0; }
+    .bs-lead-body {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+    .bs-lead-body strong { color: var(--ink); font-weight: 400; }
+    .bs-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .bs-btn-primary {
+      display: inline-block;
+      background: var(--sage);
+      color: white;
+      padding: 0.8rem 2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s;
+    }
+    .bs-btn-primary:hover { background: var(--ink); }
+    .bs-btn-secondary {
+      display: inline-block;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.8rem 1.8rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .bs-btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* right col: contact sidebar */
+    .bs-contact-item { margin-bottom: 1.4rem; }
+    .bs-contact-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.52rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 0.3rem;
+    }
+    .bs-contact-value {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+    .bs-contact-value a { color: var(--sage); text-decoration: none; }
+    .bs-hours-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      margin-top: 1.5rem;
+    }
+    .bs-hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+    }
+    .bs-hours-row:last-child { border-bottom: none; }
+    .bs-hours-row strong { color: var(--sage); font-weight: 400; font-size: 0.7rem; }
+
+    /* ══════════════════════════════════════
+       SERVICES: 2 FEATURED + 4 GRID
+       UNIQUE: no template uses this 2+4 layout pattern
+    ══════════════════════════════════════ */
+    .services {
+      border-bottom: 1px solid var(--border);
+    }
+    .services-masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 3rem 1.5rem;
+      border-bottom: 2px solid var(--ink);
+    }
+    .sm-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+    }
+    .sm-desc {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 380px;
+      line-height: 1.6;
+    }
+
+    /* 2 featured services */
+    .svc-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .svc-feat-card {
+      padding: 3rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+      transition: background 0.25s;
+    }
+    .svc-feat-card:last-child { border-right: none; }
+    .svc-feat-card:hover { background: var(--blush-pale); }
+    .svc-feat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--blush);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .svc-feat-card:hover::before { transform: scaleX(1); }
+    .feat-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 1rem;
+    }
+    .feat-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .feat-body {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* 4 secondary services */
+    .svc-secondary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .svc-sec-card {
+      padding: 2rem 2rem;
+      border-right: 1px solid var(--border);
+      border-top: 2px solid var(--sage);
+      transition: background 0.25s;
+    }
+    .svc-sec-card:last-child { border-right: none; }
+    .svc-sec-card:hover { background: var(--sage-pale); }
+    .sec-num {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      color: var(--sage);
+      margin-bottom: 0.8rem;
+      font-weight: 400;
+    }
+    .sec-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+    .sec-body {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════
+       STATS STRIP — sage background
+    ══════════════════════════════════════ */
+    .stats-strip {
+      background: var(--sage);
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .strip-stat {
+      flex: 1;
+      max-width: 240px;
+      text-align: center;
+      padding: 0 2rem;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .strip-stat:last-child { border-right: none; }
+    .strip-num {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .strip-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      font-weight: 400;
+    }
+
+    /* ══════════════════════════════════════
+       ABOUT: BLUSH QUOTE + SAGE BIO — side by side full width panels
+       UNIQUE: no template uses this horizontal tinted-panel split
+    ══════════════════════════════════════ */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+    .about-quote-panel {
+      background: var(--blush-pale);
+      border-right: 1px solid var(--border);
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    .about-quote-panel::before {
+      content: '"';
+      position: absolute;
+      top: 2rem; left: 3.5rem;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 8rem;
+      color: var(--blush);
+      opacity: 0.18;
+      line-height: 1;
+    }
+    .about-q-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    .about-q-text {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      color: var(--ink-soft);
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .about-q-text em { font-style: normal; color: var(--blush); }
+    .about-q-attr {
+      margin-top: 2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .about-bio-panel {
+      background: var(--sage-pale);
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .about-b-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 400;
+    }
+    .about-b-name {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+    .about-b-name em { color: var(--sage); font-style: italic; font-weight: 400; }
+    .about-b-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      line-height: 1.85;
+    }
+    .about-b-creds {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .about-b-creds li {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(122,158,140,0.2);
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .about-b-creds li:last-child { border-bottom: none; }
+    .about-b-creds li::before { content: '·'; color: var(--sage); font-weight: 700; flex-shrink: 0; font-size: 1rem; line-height: 1.3; }
+
+    /* ══════════════════════════════════════
+       CONTACT: SINGLE CENTERED COLUMN
+       No 2-col split, centered max-width form.
+       Different from all 3 existing 2-col contacts.
+    ══════════════════════════════════════ */
+    .contact {
+      padding: 6rem 2rem;
+      background: var(--cream-deep);
+      border-top: 1px solid var(--border);
+    }
+    .contact-inner {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .contact-head {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .contact-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+    }
+    .contact-label::before,
+    .contact-label::after { content: ''; width: 20px; height: 1px; background: var(--sage); }
+    .contact-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .contact-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--muted);
+      font-style: italic;
+    }
+    /* info pills row */
+    .contact-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .contact-pill {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.45rem 1.1rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pill-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
+    .pill-dot--blush { background: var(--blush); }
+
+    /* form */
+    .contact-form { display: flex; flex-direction: column; gap: 0; }
+    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
+    .cf-group { margin-bottom: 1.2rem; }
+    .cf-label {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.52rem;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.4rem;
+    }
+    .cf-input,
+    .cf-select,
+    .cf-textarea {
+      width: 100%;
+      background: white;
+      border: 1px solid var(--border);
+      border-bottom: 2px solid var(--sage-light);
+      padding: 0.7rem 0.9rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.25s;
+      border-radius: 0;
+    }
+    .cf-input:focus,
+    .cf-select:focus,
+    .cf-textarea:focus { border-bottom-color: var(--sage); background: var(--sage-pale); }
+    .cf-textarea { resize: vertical; min-height: 100px; }
+    .cf-submit {
+      width: 100%;
+      background: var(--sage);
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s;
+    }
+    .cf-submit:hover { background: var(--ink); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 2.5rem 3rem;
+    }
+    .footer-inner {
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-name {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: rgba(250,246,243,0.38);
+    }
+    .footer-name em { font-style: italic; color: rgba(196,144,138,0.45); }
+    .footer-legal { font-family: 'Jost', sans-serif; font-size: 0.54rem; letter-spacing: 0.14em; color: rgba(250,246,243,0.15); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.54rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(250,246,243,0.2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(250,246,243,0.5); }
+
+    /* animations */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes mhReveal {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .masthead-title { animation: mhReveal 0.9s ease 0.1s both; }
+    .masthead-subtitle { animation: mhReveal 0.8s ease 0.25s both; }
+
+    /* ── HAMBURGER ── */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 301;
+    }
+    .menu-btn span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: currentColor;
+      transition: all 0.25s;
+    }
+    .menu-btn.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+    .menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+    @media (max-width: 768px) {
+      /* masthead */
+      .masthead-meta { padding: 0.4rem 1.2rem; flex-direction: column; align-items: center; gap: 0.3rem; }
+      .masthead-meta-left, .masthead-meta-right { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+      .meta-sep { display: none; }
+      .masthead-title-block { padding: 0.8rem 1.2rem 0.5rem; position: relative; }
+      .masthead-title { font-size: clamp(1.6rem, 8vw, 3rem); letter-spacing: 0.04em; }
+      .masthead-subtitle { font-size: 0.5rem; }
+      .masthead-ornament { display: none; }
+      /* hamburger in masthead */
+      .masthead .menu-btn { display: flex; color: var(--ink); position: absolute; right: 1.2rem; top: 50%; transform: translateY(-50%); }
+      #site-nav {
+        display: none;
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(250,246,243,0.98); backdrop-filter: blur(24px);
+        flex-direction: column; align-items: center; justify-content: center;
+        gap: 2.5rem; z-index: 250;
+      }
+      #site-nav.open { display: flex; }
+      #site-nav a { font-size: 1rem; letter-spacing: 0.22em; color: var(--ink) !important; border: none !important; background: none !important; padding: 0 !important; }
+      /* broadsheet: stack columns */
+      .broadsheet { grid-template-columns: 1fr; }
+      .bs-col { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 1.5rem; }
+      .bs-col:last-child { border-bottom: none; }
+      .bs-lead-h1 { font-size: clamp(1.5rem, 7vw, 2.5rem); }
+      /* services */
+      .services-masthead { padding: 1.5rem; flex-direction: column; gap: 0.8rem; }
+      .svc-featured { grid-template-columns: 1fr; }
+      .svc-feat-card { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 1.5rem; }
+      .svc-feat-card:last-child { border-bottom: none; }
+      .svc-secondary { grid-template-columns: 1fr 1fr; }
+      .svc-sec-card { padding: 1.5rem 1.2rem; }
+      /* stats */
+      .stats-strip { flex-wrap: wrap; padding: 2rem 1rem; }
+      .strip-stat { min-width: 50%; border-right: none; padding: 1rem; }
+      /* about */
+      .about { grid-template-columns: 1fr; }
+      .about-quote-panel, .about-bio-panel { padding: 3rem 1.5rem; }
+      /* contact */
+      .contact { padding: 3rem 1.5rem; }
+      .cf-row { grid-template-columns: 1fr; }
+      /* footer */
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; padding: 1.5rem; gap: 0.8rem; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ MASTHEAD — newspaper broadsheet header ══ -->
+  <header class="masthead" id="masthead">
+    <div class="masthead-meta">
+      <div class="masthead-meta-left">
+        <span class="meta-item">San Ramón, Santiago</span>
+        <span class="meta-sep">·</span>
+        <span class="meta-item">Av. Sta. Rosa Nº 7955</span>
+        <span class="meta-sep">·</span>
+        <span class="meta-item"><a href="tel:+56225114689">2-2511 4689</a> / <a href="tel:+56226150414">2-2615 0414</a></span>
+      </div>
+      <div class="masthead-meta-right">
+        <span class="meta-item">Lun–Vie <strong>09:00–17:30</strong></span>
+        <span class="meta-sep">·</span>
+        <span class="meta-item"><a href="mailto:notariasanramon@gmail.com">notariasanramon@gmail.com</a></span>
+      </div>
+    </div>
+
+    <div class="masthead-title-block">
+      <div class="masthead-ornament" aria-hidden="true">
+        <div class="ornament-line"></div>
+        <div class="ornament-center">✦ Fe Pública · Certeza Jurídica ✦</div>
+        <div class="ornament-line"></div>
+      </div>
+      <div class="masthead-title" id="main-title">
+        Notaría <em>de</em> San Ramón
+      </div>
+      <div class="masthead-subtitle">Lic. Marcela Medina Ricci · Notaria Pública Titular</div>
+    </div>
+
+    
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav id="site-nav" class="masthead-nav" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">La Notaria</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="cta">Solicitar Hora</a>
+    </nav>
+  </header>
+
+  <!-- ══ BROADSHEET GRID — 3-col newspaper layout ══ -->
+  <section class="broadsheet" aria-label="Información principal">
+
+    <!-- left: service index -->
+    <div class="bs-col reveal">
+      <span class="bs-col-title">Nuestros Servicios</span>
+      <ul class="bs-index-list">
+        <li><span class="bs-index-num">01</span> Escrituras Públicas</li>
+        <li><span class="bs-index-num">02</span> Testamentos</li>
+        <li><span class="bs-index-num">03</span> Poderes Notariales</li>
+        <li><span class="bs-index-num">04</span> Certificaciones</li>
+        <li><span class="bs-index-num">05</span> Compraventas</li>
+        <li><span class="bs-index-num">06</span> Protocolizaciones</li>
+      </ul>
+    </div>
+
+    <!-- center: lead story -->
+    <div class="bs-col reveal">
+      <div class="bs-lead-overline">Notaría Pública · San Ramón</div>
+      <h1 class="bs-lead-h1">
+        La certeza jurídica<br/>que su <em>patrimonio</em><br/>merece.
+      </h1>
+      <div class="bs-rule" aria-hidden="true"></div>
+      <p class="bs-lead-body">
+        La Notaría de San Ramón, bajo la titularidad de la <strong>Lic. Marcela Medina Ricci</strong>,
+        ofrece servicios notariales de primer nivel con la seriedad, el rigor y la atención
+        personalizada que cada trámite exige. Cada instrumento que sale de esta notaría es
+        garantía de validez y permanencia jurídica.
+      </p>
+      <div class="bs-cta-row">
+        <a href="#contacto" class="bs-btn-primary">Solicitar Hora</a>
+        <a href="#servicios" class="bs-btn-secondary">Ver Servicios</a>
+      </div>
+    </div>
+
+    <!-- right: contact sidebar -->
+    <div class="bs-col reveal">
+      <span class="bs-col-title">Contacto Directo</span>
+      <div class="bs-contact-item">
+        <div class="bs-contact-label">Dirección</div>
+        <div class="bs-contact-value">Av. Sta. Rosa Nº 7955<br/>San Ramón, Santiago</div>
+      </div>
+      <div class="bs-contact-item">
+        <div class="bs-contact-label">Teléfonos</div>
+        <div class="bs-contact-value">
+          <a href="tel:+56225114689">2-2511 4689</a><br/>
+          <a href="tel:+56226150414">2-2615 0414</a>
+        </div>
+      </div>
+      <div class="bs-contact-item">
+        <div class="bs-contact-label">Correo</div>
+        <div class="bs-contact-value"><a href="mailto:notariasanramon@gmail.com">notariasanramon@gmail.com</a></div>
+      </div>
+      <div class="bs-hours-grid" role="table" aria-label="Horario de atención">
+        <div class="bs-hours-row" role="row">
+          <span>Lunes a Viernes</span>
+          <strong>09:00 – 17:30</strong>
+        </div>
+        <div class="bs-hours-row" role="row">
+          <span>Sábado – Domingo</span>
+          <strong>Cerrado</strong>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══ SERVICES: 2 FEATURED + 4 GRID ══ -->
+  <section class="services" id="servicios" aria-labelledby="svc-heading">
+    <div class="services-masthead">
+      <div class="sm-title" id="svc-heading">Servicios Notariales</div>
+      <div class="sm-desc">La Lic. Marcela Medina Ricci garantiza la más alta responsabilidad profesional en cada instrumento notarial.</div>
+    </div>
+
+    <!-- 2 featured large -->
+    <div class="svc-featured" role="list">
+      <div class="svc-feat-card reveal" role="listitem">
+        <div class="feat-label">Servicio Principal</div>
+        <div class="feat-title">Escrituras<br/>Públicas</div>
+        <p class="feat-body">Compraventa de inmuebles, contratos, hipotecas y todo acto que requiera fe pública notarial con plena validez jurídica y registral.</p>
+      </div>
+      <div class="svc-feat-card reveal" role="listitem">
+        <div class="feat-label">Servicio Principal</div>
+        <div class="feat-title">Testamentos<br/>y Sucesiones</div>
+        <p class="feat-body">Redacción y otorgamiento de testamento público con plena validez. Su voluntad, protegida con la solemnidad que merece, en total confidencialidad.</p>
+      </div>
+    </div>
+
+    <!-- 4 secondary -->
+    <div class="svc-secondary" role="list">
+      <div class="svc-sec-card reveal" role="listitem">
+        <div class="sec-num">03</div>
+        <div class="sec-title">Poderes Notariales</div>
+        <p class="sec-body">Mandatos y poderes especiales o generales para representación legal.</p>
+      </div>
+      <div class="svc-sec-card reveal" role="listitem">
+        <div class="sec-num">04</div>
+        <div class="sec-title">Certificaciones</div>
+        <p class="sec-body">Certificación de firmas, copias auténticas y documentos con validez oficial.</p>
+      </div>
+      <div class="svc-sec-card reveal" role="listitem">
+        <div class="sec-num">05</div>
+        <div class="sec-title">Compraventas</div>
+        <p class="sec-body">Transferencia de bienes con seguridad jurídica completa para todas las partes.</p>
+      </div>
+      <div class="svc-sec-card reveal" role="listitem">
+        <div class="sec-num">06</div>
+        <div class="sec-title">Protocolizaciones</div>
+        <p class="sec-body">Incorporación de documentos privados al protocolo notarial con fe pública.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS STRIP ══ -->
+  <div class="stats-strip reveal" role="list" aria-label="Cifras destacadas">
+    <div class="strip-stat" role="listitem">
+      <div class="strip-num">+20</div>
+      <div class="strip-label">Años de ejercicio</div>
+    </div>
+    <div class="strip-stat" role="listitem">
+      <div class="strip-num">6</div>
+      <div class="strip-label">Servicios notariales</div>
+    </div>
+    <div class="strip-stat" role="listitem">
+      <div class="strip-num">100%</div>
+      <div class="strip-label">Fe pública garantizada</div>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT: BLUSH QUOTE + SAGE BIO ══ -->
+  <section class="about" id="nosotros" aria-labelledby="about-heading">
+
+    <!-- blush quote panel -->
+    <div class="about-quote-panel reveal">
+      <div class="about-q-label">Filosofía Notarial</div>
+      <blockquote class="about-q-text" id="about-heading">
+        "Mi compromiso no termina con la firma del instrumento.
+        La certeza jurídica que otorgo en cada acto notarial
+        es mi <em>sello personal</em>."
+      </blockquote>
+      <div class="about-q-attr">— Lic. Marcela Medina Ricci · Notaria Titular</div>
+    </div>
+
+    <!-- sage bio panel -->
+    <div class="about-bio-panel reveal">
+      <div class="about-b-label">La Titular</div>
+      <div class="about-b-name">Lic. Marcela<br/><em>Medina Ricci</em></div>
+      <p class="about-b-text">
+        Notaria titular de la Notaría de San Ramón. Especialista en derecho
+        inmobiliario, familiar y sucesorio. Su práctica se distingue por la
+        precisión jurídica y la atención directa y personalizada a cada cliente.
+        Más de dos décadas de ejercicio notarial en San Ramón.
+      </p>
+      <ul class="about-b-creds">
+        <li>Licenciada en Derecho con mención en Derecho Notarial</li>
+        <li>Especialista en derecho inmobiliario y sucesorio</li>
+        <li>Miembro activa · Asociación de Notarios de Chile</li>
+        <li>Más de 20 años de ejercicio notarial en San Ramón</li>
+        <li>Confidencialidad y seriedad profesional garantizadas</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ══ CONTACT: SINGLE CENTERED COLUMN ══ -->
+  <section class="contact" id="contacto" aria-labelledby="contact-heading">
+    <div class="contact-inner">
+      <div class="contact-head reveal">
+        <div class="contact-label" aria-hidden="true">Contáctenos</div>
+        <h2 class="contact-title" id="contact-heading">Estamos a su disposición.</h2>
+        <p class="contact-sub">Escríbanos o visítenos, con gusto le orientamos.</p>
+      </div>
+
+      <div class="contact-pills reveal" role="list" aria-label="Información de contacto">
+        <div class="contact-pill" role="listitem"><span class="pill-dot"></span> Av. Sta. Rosa Nº 7955, San Ramón</div>
+        <div class="contact-pill" role="listitem"><span class="pill-dot pill-dot--blush"></span> 2-2511 4689 / 2-2615 0414</div>
+        <div class="contact-pill" role="listitem"><span class="pill-dot"></span> Lun–Vie 09:00–17:30</div>
+      </div>
+
+      <form class="contact-form reveal" action="#" method="post" aria-label="Formulario de contacto">
+        <div class="cf-row">
+          <div>
+            <label class="cf-label" for="t5-name">Nombre</label>
+            <input class="cf-input" type="text" id="t5-name" name="name" placeholder="Su nombre completo" />
+          </div>
+          <div>
+            <label class="cf-label" for="t5-phone">Teléfono</label>
+            <input class="cf-input" type="tel" id="t5-phone" name="phone" placeholder="+56 9 XXXX XXXX" />
+          </div>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label" for="t5-email">Correo Electrónico</label>
+          <input class="cf-input" type="email" id="t5-email" name="email" placeholder="su@correo.cl" />
+        </div>
+        <div class="cf-group">
+          <label class="cf-label" for="t5-service">Tipo de Trámite</label>
+          <select class="cf-select" id="t5-service" name="service">
+            <option value="">Seleccionar</option>
+            <option>Escritura Pública</option>
+            <option>Testamento</option>
+            <option>Poder Notarial</option>
+            <option>Certificación</option>
+            <option>Compraventa</option>
+            <option>Protocolización</option>
+          </select>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label" for="t5-msg">Mensaje</label>
+          <textarea class="cf-textarea" id="t5-msg" name="message" placeholder="Cuéntenos brevemente su consulta..."></textarea>
+        </div>
+        <button type="submit" class="cf-submit">Enviar Consulta</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Notaría <em>de San Ramón</em></div>
+      <div class="footer-legal">© 2025 · Lic. Marcela Medina Ricci · Notaría de San Ramón · Todos los derechos reservados</div>
+      <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">La Notaria</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <TemplateNav client:load />
+
+  <script>
+    const masthead = document.getElementById('masthead');
+    window.addEventListener('scroll', () => {
+      masthead?.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), (i % 3) * 100);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => obs.observe(el));
+
+    // Hamburger menu
+    const menuBtn = document.getElementById('menu-btn');
+    const siteNav = document.getElementById('site-nav');
+    menuBtn?.addEventListener('click', () => {
+      const open = menuBtn.classList.toggle('open');
+      if (siteNav) siteNav.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>
